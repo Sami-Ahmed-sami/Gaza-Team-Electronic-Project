@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EE Team - Electrical Engineering Students</title>
+    <meta name="description" content="Electrical Engineering Students from Institute of Engineering and Technology, Kafr El-Sheikh.">
+    <meta name="author" content="EE Team">
+
+    <meta property="og:title" content="EE Team - Electrical Engineering Students">
+    <meta property="og:description" content="Institute of Engineering and Technology, Kafr El-Sheikh - Department of Electrical Engineering">
+    <meta property="og:type" content="website">
+    
+    <!-- ملفات الـ CSS والـ JS في نفس المجلد الرئيسي -->
+    <link rel="stylesheet"  href="style.css">
+    <style>
+        /* تنسيقات إضافية للأيقونات */
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        .hover-text-blue:hover { color: #0077b5; }
+        .hover-text-red:hover { color: #ff0000; }
+        .hover-text-darkblue:hover { color: #1877f2; }
+        
+        /* تنسيق للشعارات الدائرية */
+        .circular-logo {
+            border-radius: 50%; /* يجعل الصورة دائرية */
+            overflow: hidden; /* يضمن قص أي جزء خارج الدائرة */
+            /* إضافة حد بسيط اختياري لإبراز الدائرة إذا كانت الخلفية شفافة */
+            /* border: 2px solid rgba(255, 255, 255, 0.1); */
+        }
+
+        /* تعديل لصورة الدكتور لتكون مربعة */
+        .square-image {
+            border-radius: 1rem; /* حواف دائرية قليلاً للمربع لجمالية أكثر، يمكنك جعلها 0 لمربع حاد */
+            /* تم إزالة border-radius: 50% الموجودة سابقاً */
+        }
+
+        :where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999;transition:transform .4s ease}
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="min-h-screen">
+            <!-- Navigation Bar -->
+            <nav class="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+                <div class="container mx-auto px-4">
+                    <div class="flex items-center justify-between h-16">
+                        <button class="font-bold text-xl text-primary hover:text-electric transition-colors">EE Team</button>
+                        <div class="hidden md:flex items-center gap-6">
+                            <button class="text-sm font-medium transition-colors hover:text-primary text-primary">Home</button>
+                            <button class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">About</button>
+                            <button onclick="document.getElementById('supervisor').scrollIntoView({behavior: 'smooth'})" class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">Supervisor</button>
+                            <button class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">Team</button>
+                            <button class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">Projects</button>
+                            <button class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">Gallery</button>
+                            <button class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">Contact Us</button>
+                        </div>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <main>
+                <!-- Hero Section -->
+                <section id="home" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/hero.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90"></div>
+                    </div>
+                    
+                    <div class="absolute top-20 left-4 md:left-8 flex items-center gap-4 z-10 animate-fade-in">
+                        <!-- تم إضافة كلاس circular-logo لجعل الشعارات دائرية -->
+                        <img src="images/university.png" alt="University Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain circular-logo">
+                        <img src="images/department.png" alt="Department Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain circular-logo">
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-col items-center justify-center w-full px-4 py-20">
+                        <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold text-center mb-16 animate-slide-up glow-text">WELCOME</h1>
+                        <div class="animate-fade-in" style="animation-delay: 0.3s;">
+                            <!-- تم إضافة كلاس circular-logo لشعار الفريق -->
+                            <img src="images/team.png" alt="Team Logo" class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain animate-glow circular-logo">
+                        </div>
+                        <p class="text-center text-muted-foreground mt-8 max-w-2xl animate-fade-in" style="animation-delay: 0.6s;">Electrical Engineering Students - Institute of Engineering and Technology, Kafr El-Sheikh</p>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="min-h-screen flex items-center bg-background">
+                    <div class="container mx-auto px-4 py-16">
+                        <div class="max-w-6xl mx-auto">
+                            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 glow-text">About Us</h1>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div class="animate-fade-in">
+                                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                                        <img src="images/collaboration.jpg" alt="Team Collaboration" class="w-full h-auto object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-6 animate-slide-up">
+                                    <div class="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                                        <h2 class="text-2xl font-bold mb-4 text-primary">Electrical Engineering Students</h2>
+                                        <p class="text-lg leading-relaxed text-foreground">We are a group of students from the Institute of Engineering and Technology in Kafr El-Sheikh, Department of Electrical Engineering. Our goal is to excel in simplifying information and transforming it into something practical and enjoyable.</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="bg-secondary p-6 rounded-xl border border-border">
+                                            <h3 class="font-bold text-primary mb-2">Our Mission</h3>
+                                            <p class="text-sm text-muted-foreground">Excellence in electrical engineering education and practical application</p>
+                                        </div>
+                                        <div class="bg-secondary p-6 rounded-xl border border-border">
+                                            <h3 class="font-bold text-primary mb-2">Our Vision</h3>
+                                            <p class="text-sm text-muted-foreground">Leading innovation and representing our institution with pride</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- قسم الدكتور -->
+                <section id="supervisor" class="min-h-[80vh] flex items-center bg-card/30">
+                    <div class="container mx-auto px-4 py-16">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h1 class="text-3xl md:text-4xl font-bold mb-8 glow-text">Under The Supervision Of</h1>
+                            
+                            <div class="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-xl hover:border-primary transition-colors duration-300">
+                                <div class="flex flex-col items-center gap-6">
+                                    <!-- صورة الدكتور (تعديل لتكون مربعة) -->
+                                    <!-- تم إزالة rounded-full واستبداله بـ square-image -->
+                                    <div class="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-4 border-primary/20 shadow-lg relative group square-image">
+                                        <img src="images/Dr.jpg" alt="Doctor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    
+                                    <!-- البيانات -->
+                                    <div class="space-y-4">
+                                        <h2 class="text-2xl md:text-3xl font-bold text-primary">Dr. Ibrahim Zewail</h2>
+                                        <p class="text-muted-foreground max-w-lg mx-auto text-lg">
+                                            Professor of Electrical Engineering<br>
+                                            Institute of Engineering and Technology, Kafr El-Sheikh
+                                        </p>
+                                        
+                                        <!-- روابط السوشيال ميديا -->
+                                        <div class="flex justify-center gap-6 mt-6 pt-6 border-t border-border/50">
+                                            <a href="#" target="_blank" class="social-icon hover-text-blue text-muted-foreground" aria-label="LinkedIn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                            </a>
+                                            <a href="https://www.youtube.com/@dr.ibrahimzewail4045" target="_blank" class="social-icon hover-text-red text-muted-foreground" aria-label="YouTube">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                                            </a>
+                                            <a href="https://www.facebook.com/ibrahiem.zewail" target="_blank" class="social-icon hover-text-darkblue text-muted-foreground" aria-label="Facebook">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Section -->
+               <section id="team" class="min-h-screen flex items-center bg-card/30" data--h-bstatus="0OBSERVED">
+    <div class="container mx-auto px-4 py-16" data--h-bstatus="0OBSERVED">
+        <div class="max-w-6xl mx-auto" data--h-bstatus="0OBSERVED">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 glow-text" data--h-bstatus="0OBSERVED">Our Team</h1>
+            <p class="text-center text-muted-foreground mb-12" data--h-bstatus="0OBSERVED">Meet the talented individuals behind our projects</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data--h-bstatus="0OBSERVED">
+                <div class="rounded-lg border text-card-foreground shadow-sm bg-card border-border hover:border-primary transition-all duration-300 p-8 flex flex-col items-center justify-center min-h-[280px] group hover:shadow-lg" data--h-bstatus="0OBSERVED">
+                    <div class="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors" data--h-bstatus="0OBSERVED">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" data--h-bstatus="0OBSERVED">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" data--h-bstatus="0OBSERVED">
+
+                            </path><circle cx="12" cy="7" r="4" data--h-bstatus="0OBSERVED">
+
+                            </circle>
+                        </svg>
+                    </div>
+                    <div class="text-center" data--h-bstatus="0OBSERVED">
+                        <h3 class="font-bold text-lg mb-2 text-muted-foreground" data--h-bstatus="0OBSERVED">Team Member 1</h3>
+                        <p class="text-sm text-muted-foreground" data--h-bstatus="0OBSERVED">Position Title</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border text-card-foreground shadow-sm bg-card border-border hover:border-primary transition-all duration-300 p-8 flex flex-col items-center justify-center min-h-[280px] group hover:shadow-lg" data--h-bstatus="0OBSERVED">
+                    <div class="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors" data--h-bstatus="0OBSERVED">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" data--h-bstatus="0OBSERVED">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" data--h-bstatus="0OBSERVED">
+
+                            </path><circle cx="12" cy="7" r="4" data--h-bstatus="0OBSERVED"></circle>
+                        </svg>
+                        </div>
+                        <div class="text-center" data--h-bstatus="0OBSERVED">
+                            <h3 class="font-bold text-lg mb-2 text-muted-foreground" data--h-bstatus="0OBSERVED">Team Member 2</h3>
+                            <p class="text-sm text-muted-foreground" data--h-bstatus="0OBSERVED">Position Title</p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg border text-card-foreground shadow-sm bg-card border-border hover:border-primary transition-all duration-300 p-8 flex flex-col items-center justify-center min-h-[280px] group hover:shadow-lg" data--h-bstatus="0OBSERVED">
+                        <div class="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors" data--h-bstatus="0OBSERVED">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" data--h-bstatus="0OBSERVED">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" data--h-bstatus="0OBSERVED">
+
+                                </path><circle cx="12" cy="7" r="4" data--h-bstatus="0OBSERVED">
+                                    
+                                </circle>
+                            </svg>
+                            </div>
+                        <div class="text-center" data--h-bstatus="0OBSERVED">
+                            <h3 class="font-bold text-lg mb-2 text-muted-foreground" data--h-bstatus="0OBSERVED">Team Member 3</h3>
+                            <p class="text-sm text-muted-foreground" data--h-bstatus="0OBSERVED">Position Title</p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg border text-card-foreground shadow-sm bg-card border-border hover:border-primary transition-all duration-300 p-8 flex flex-col items-center justify-center min-h-[280px] group hover:shadow-lg" data--h-bstatus="0OBSERVED">
+                        <div class="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors" data--h-bstatus="0OBSERVED">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" data--h-bstatus="0OBSERVED"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" data--h-bstatus="0OBSERVED"></path><circle cx="12" cy="7" r="4" data--h-bstatus="0OBSERVED"></circle></svg></div>
+                        <div class="text-center" data--h-bstatus="0OBSERVED">
+                            <h3 class="font-bold text-lg mb-2 text-muted-foreground" data--h-bstatus="0OBSERVED">Team Member 4</h3>
+                            <p class="text-sm text-muted-foreground" data--h-bstatus="0OBSERVED">Position Title</p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg border text-card-foreground shadow-sm bg-card border-border hover:border-primary transition-all duration-300 p-8 flex flex-col items-center justify-center min-h-[280px] group hover:shadow-lg" data--h-bstatus="0OBSERVED">
+                        <div class="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors" data--h-bstatus="0OBSERVED">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" data--h-bstatus="0OBSERVED"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" data--h-bstatus="0OBSERVED"></path><circle cx="12" cy="7" r="4" data--h-bstatus="0OBSERVED"></circle></svg></div>
+                        <div class="text-center" data--h-bstatus="0OBSERVED">
+                            <h3 class="font-bold text-lg mb-2 text-muted-foreground" data--h-bstatus="0OBSERVED">Team Member 5</h3>
+                            <p class="text-sm text-muted-foreground" data--h-bstatus="0OBSERVED">Position Title</p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg border text-card-foreground shadow-sm bg-card border-border hover:border-primary transition-all duration-300 p-8 flex flex-col items-center justify-center min-h-[280px] group hover:shadow-lg" data--h-bstatus="0OBSERVED">
+                        <div class="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors" data--h-bstatus="0OBSERVED">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" data--h-bstatus="0OBSERVED"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" data--h-bstatus="0OBSERVED"></path><circle cx="12" cy="7" r="4" data--h-bstatus="0OBSERVED"></circle></svg></div>
+                        <div class="text-center" data--h-bstatus="0OBSERVED">
+                            <h3 class="font-bold text-lg mb-2 text-muted-foreground" data--h-bstatus="0OBSERVED">Team Member 6</h3>
+                            <p class="text-sm text-muted-foreground" data--h-bstatus="0OBSERVED">Position Title</p>
+                        </div>
+                    </div>
+                </div></div></div></section>
+
+
+                <!-- Projects Section -->
+                <section id="projects" class="min-h-screen flex items-center bg-card/30">
+                    <div class="container mx-auto px-4 py-16">
+                        <div class="max-w-6xl mx-auto">
+                            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 glow-text">Our Projects</h1>
+                            <div class="bg-card border border-border rounded-2xl p-12 text-center min-h-[400px] flex items-center justify-center">
+                                <div>
+                                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
+                                        <span class="text-4xl">🚀</span>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-4">Coming Soon</h2>
+                                    <p class="text-muted-foreground max-w-md mx-auto">We're working on showcasing our amazing projects. Check back soon!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section id="gallery" class="min-h-screen flex items-center bg-background">
+                    <div class="container mx-auto px-4 py-16">
+                        <div class="max-w-6xl mx-auto">
+                            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 glow-text">Gallery</h1>
+                            <div class="bg-card border border-border rounded-2xl p-12 text-center min-h-[400px] flex items-center justify-center">
+                                <div>
+                                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
+                                        <span class="text-4xl">📸</span>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-4">Gallery Coming Soon</h2>
+                                    <p class="text-muted-foreground max-w-md mx-auto">We're curating our best moments and achievements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Us Section -->
+                <section id="contact" class="min-h-screen flex items-center bg-card/30">
+                    <div class="container mx-auto px-4 py-16">
+                        <div class="max-w-6xl mx-auto">
+                            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 glow-text">Contact Us</h1>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                                <div class="rounded-lg border text-card-foreground shadow-sm p-8 bg-card border-border">
+                                    <form class="space-y-6">
+                                        <div>
+                                            <label class="text-sm font-medium leading-none" for="name">Name *</label>
+                                            <input type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base md:text-sm mt-2" id="name" name="name" placeholder="Your name" required="">
+                                        </div>
+                                        <div>
+                                            <label class="text-sm font-medium leading-none" for="email">Email *</label>
+                                            <input type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base md:text-sm mt-2" id="email" name="email" placeholder="your.email@example.com" required="">
+                                        </div>
+                                        <div>
+                                            <label class="text-sm font-medium leading-none" for="message">Message *</label>
+                                            <textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm mt-2 min-h-[150px]" id="message" name="message" placeholder="Your message..." required=""></textarea>
+                                        </div>
+                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full" type="submit">Send Message</button>
+                                    </form>
+                                </div>
+                                <div class="space-y-6">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm p-6 bg-card border-border">
+                                        <div class="flex items-start gap-4">
+                                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-6 h-6 text-primary"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold mb-2">Location</h3>
+                                                <p class="text-sm text-muted-foreground">Institute of Engineering and Technology<br>Kafr El-Sheikh, Egypt</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg border text-card-foreground shadow-sm p-6 bg-card border-border">
+                                        <div class="flex items-start gap-4">
+                                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-6 h-6 text-primary"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold mb-2">Email</h3>
+                                                <p class="text-sm text-muted-foreground">contact@eeteam.edu.eg</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="bg-card border-t border-border">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg mb-4">EE Team</h3>
+                            <p class="text-sm text-muted-foreground">Institute of Engineering and Technology<br>Kafr El-Sheikh, Egypt</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                            <div class="flex flex-col gap-2">
+                                <button onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})" class="text-sm text-muted-foreground hover:text-primary transition-colors text-left">Home</button>
+                                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" class="text-sm text-muted-foreground hover:text-primary transition-colors text-left">About</button>
+                                <button onclick="document.getElementById('team').scrollIntoView({behavior: 'smooth'})" class="text-sm text-muted-foreground hover:text-primary transition-colors text-left">Team</button>
+                                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="text-sm text-muted-foreground hover:text-primary transition-colors text-left">Contact Us</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-4">Connect</h3>
+                            <p class="text-sm text-muted-foreground">Department of Electrical Engineering<br>Excellence in Education</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">© 2025 EE Team. All rights reserved.</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- تم الإصلاح: حذفنا crossorigin من السكريبت أيضاً -->
+</body>
+</html>
+
